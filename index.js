@@ -1,7 +1,7 @@
 "use strict";
 
 /* --------------------------------
-! EXPRESSJS - BLOGAPI PROJECT
+! EXPRESSJS - PERSONELAPI PROJECT
 -------------------------------- */
 require('dotenv').config();
 require('express-async-errors');
@@ -18,17 +18,23 @@ app.use(express.json());
 // Searching&Sorting&Pagination:
 app.use(require('./src/middlewares/findSearchSortPage'))
 
+
+
 // Root endpoint
 app.all('/', (req, res) => {
     res.send('Personel API');
 });
 
+// Department routes
+app.use("/departments", require("./src/routes/department.route"));
+app.use("/personels", require("./src/routes/personel.route"));
 
 
 
 //
 // Centralized error handler (should be last middleware)
 app.use(errorHandler);
+
 
 // Synchronization:
 // require('./src/sync')()
