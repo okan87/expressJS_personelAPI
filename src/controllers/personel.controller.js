@@ -5,7 +5,7 @@ const Personel = require("../models/personel.model");
 //! *****************************************
 module.exports = {
   list: async (req, res) => {
-    const data = await req.getModelList(Personel);
+    const data = await req.getModelList(Personel,{}, 'departmentId');
     const details = await req.getModelListDetails(Personel);
     res.status(200).json({
       error: false,

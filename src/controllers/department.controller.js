@@ -1,7 +1,6 @@
 "use strict";
 
 const Department = require("../models/department.model");
-const Personel = require("../models/personel.model");
 
 //! *****************************************
 module.exports = {
@@ -65,6 +64,22 @@ module.exports = {
     res.status(200).json({
       error: false,
       result: data,
+    });
+  },
+  personels: async (req, res) => {
+    const Personel = require("../models/personel.model");
+    const data = await Personel.find({
+      departmentId: req.params.departmentId,
+    });
+    const details = {
+      count: data.length,
+      departmentId: req.params.departmentId,
+    };
+    res.status(200).json({
+      error: false,
+      count: data.length,
+      result: data,
+      details,
     });
   },
 };

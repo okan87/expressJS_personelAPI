@@ -11,6 +11,6 @@ router.route('/:departmentId')
     .put(Department.update)
     .patch(Department.update)
     .delete(Department.delete)
-
+router.get('/:departmentId/personels', Department.personels);
 
 module.exports = router

@@ -9,24 +9,24 @@ const mongoose = require('mongoose');
   "count": 3,
   "result": [
     {
-      "_id": "685722761440ae06491c3708",
-      "name": "FullStack Department",
-      "createdAt": "2025-06-21T21:21:58.241Z",
-      "updatedAt": "2025-06-21T21:21:58.241Z",
+      "_id": "6858051db7e60e263f4fba8c",
+      "name": "Full-Stack Department",
+      "createdAt": "2025-06-22T13:29:01.729Z",
+      "updatedAt": "2025-06-22T13:29:01.729Z",
       "__v": 0
     },
     {
-      "_id": "6857227f1440ae06491c370a",
-      "name": "Devops Department",
-      "createdAt": "2025-06-21T21:22:07.724Z",
-      "updatedAt": "2025-06-21T21:22:07.724Z",
+      "_id": "6858052ab7e60e263f4fba8e",
+      "name": "Dev-ops Department",
+      "createdAt": "2025-06-22T13:29:14.428Z",
+      "updatedAt": "2025-06-22T13:29:14.428Z",
       "__v": 0
     },
     {
-      "_id": "6857228f1440ae06491c370c",
-      "name": "CyberSecurity Department",
-      "createdAt": "2025-06-21T21:22:23.692Z",
-      "updatedAt": "2025-06-21T21:22:23.692Z",
+      "_id": "68580537b7e60e263f4fba90",
+      "name": "Cyber-Security Department",
+      "createdAt": "2025-06-22T13:29:27.163Z",
+      "updatedAt": "2025-06-22T13:29:27.163Z",
       "__v": 0
     }
   ],
