@@ -29,7 +29,8 @@ app.all('/', (req, res) => {
     
 });
 
-// Department routes
+// Department route
+//deneme
 app.use("/auth", require("./src/routes/auth.route"))
 app.use("/departments", require("./src/routes/department.route"));
 app.use("/personels", require("./src/routes/personel.route"));
