@@ -1,6 +1,10 @@
 "use strict";
 const router = require("express").Router()
-const Personel = require('../controllers/personel.controller')
+const Personel = require("../controllers/personel.controller")
+const Auth = require('../controllers/auth.controller')
+
+router.post("/login", Auth.login );
+router.all("/logout", Auth.logout);
 
 router.route('/')
     .get(Personel.list)

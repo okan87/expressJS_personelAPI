@@ -4,6 +4,8 @@
 ! EXPRESSJS - PERSONELAPI PROJECT
 -------------------------------- */
 require('dotenv').config();
+
+
 require('express-async-errors');
 
 const express = require('express');
@@ -22,10 +24,13 @@ app.use(require('./src/middlewares/findSearchSortPage'))
 
 // Root endpoint
 app.all('/', (req, res) => {
-    res.send('Personel API');
+    
+    res.send('Personel API-canimsin');
+    
 });
 
 // Department routes
+app.use("/auth", require("./src/routes/auth.route"))
 app.use("/departments", require("./src/routes/department.route"));
 app.use("/personels", require("./src/routes/personel.route"));
 
