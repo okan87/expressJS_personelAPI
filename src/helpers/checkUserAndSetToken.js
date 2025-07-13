@@ -1,7 +1,7 @@
 "use strict";
 
 const jwt = require("jsonwebtoken");
-const Personel = require("../models/personel.model");
+const Personnel = require("../models/personnel.model");
 const { comparePassword } = require("./passwordEncrypt");
 
 module.exports = async function (userData, withRefresh = true) {
@@ -14,7 +14,7 @@ module.exports = async function (userData, withRefresh = true) {
     };
   }
 
-  const user = await Personel.findOne({ username });
+  const user = await Personnel.findOne({ username });
   if (!user) {
     return {
       error: true,
@@ -49,7 +49,7 @@ module.exports = async function (userData, withRefresh = true) {
   };
 
   const accessToken = jwt.sign(accessData, process.env.ACCESS_KEY, {
-    expiresIn: "10m",
+    expiresIn: "30m",
     algorithm: "HS256", // güvenliğe katkı
   });
 
