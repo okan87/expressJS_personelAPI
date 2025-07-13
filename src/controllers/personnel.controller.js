@@ -30,7 +30,7 @@ module.exports = {
     });
   },
   read: async (req, res) => {
-    const data = await Personnel.findById(req.params.personelId);
+    const data = await Personnel.findById(req.params.personnelId);
     if (!data) {
       return res
         .status(404)
@@ -44,39 +44,39 @@ module.exports = {
   update: async (req, res) => {
     // isLead Control:
     const isLead = req.body?.isLead || false;
-    let updatedPersonel;
+    let updatedPersonnel;
 
     if (isLead) {
       // 1. Find the personel
-      const personel = await Personnel.findById(req.params.personelId);
-      if (personel) {
+      const personnel = await Personnel.findById(req.params.personnelId);
+      if (personnel) {
         // 2. Do false the all personel in the same department
         await Personnel.updateMany(
-          { departmentId: personel.departmentId, isLead: true },
+          { departmentId: personnel.departmentId, isLead: true },
           { isLead: false }
         );
       }
     }
 
     // 3. update the updated personel
-    updatedPersonel = await Personnel.findByIdAndUpdate(
-      req.params.personelId,
+    updatedPersonnel = await Personnel.findByIdAndUpdate(
+      req.params.personnelId,
       req.body,
       { new: true, runValidators: true }
     );
 
-    if (!updatedPersonel) {
+    if (!updatedPersonnel) {
       return res
         .status(404)
         .json({ error: true, message: "Personnel not found" });
     }
     res.status(200).json({
       error: false,
-      result: updatedPersonel,
+      result: updatedPersonnel,
     });
   },
   delete: async (req, res) => {
-    const data = await Personnel.findByIdAndDelete(req.params.personelId);
+    const data = await Personnel.findByIdAndDelete(req.params.personnelId);
     if (!data) {
       return res
         .status(404)

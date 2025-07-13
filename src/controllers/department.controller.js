@@ -65,20 +65,20 @@ module.exports = {
             result: data,
         });
     },
-    // personels: async (req, res) => {
-    //     const Personel = require("../models/personel.model");
-    //     const data = await Personel.find({
-    //         departmentId: req.params.departmentId,
-    //     });
-    //     const details = {
-    //         count: data.length,
-    //         departmentId: req.params.departmentId,
-    //     };
-    //     res.status(200).json({
-    //         error: false,
-    //         count: data.length,
-    //         result: data,
-    //         details,
-    //     });
-    // },
+    personnels: async (req, res) => {
+        const Personnel = require("../models/personnel.model");
+        const data = await Personnel.find({
+            departmentId: req.params.departmentId,
+        });
+        const details = {
+            count: data.length,
+            departmentId: req.params.departmentId,
+        };
+        res.status(200).json({
+            error: false,
+            count: data.length,
+            result: data,
+            details,
+        });
+    },
 };

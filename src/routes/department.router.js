@@ -12,4 +12,8 @@ router.route('/:departmentId')
     .patch(Department.update)
     .delete(Department.delete)
 
+// Belirli bir departmana ait personelleri listeleyen endpoint
+router.get('/:departmentId/personnels', Department.personnels);
+
+
 module.exports = router
