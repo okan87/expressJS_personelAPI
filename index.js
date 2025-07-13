@@ -28,6 +28,7 @@ app.all('/', (req, res) => {
 
 //Routes
 app.use('/departments', require('./src/routes/department.router'))
+app.use('/personnels', require('./src/routes/personnel.router'))
 
 
 // Centralized error handler (should be last middleware)
