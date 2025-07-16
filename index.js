@@ -9,8 +9,13 @@ const express = require('express');
 const dbConnection = require('./src/configs/dbConnection');
 const errorHandler = require('./src/middlewares/errorHandler');
 const jwtAuthMiddleware = require('./src/middlewares/jwtAuthMiddleware');
+const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 8000;
+
+
+// HTTP request logger
+app.use(morgan('dev'));
 
 // JSON parser middleware
 app.use(express.json());
