@@ -1,4 +1,14 @@
 {
+  "name": "expressjs-personelapi",
+  "version": "1.0.0",
+  "description": "A secure Express.js API for personnel and department management.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "okaplan1907",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.0",
