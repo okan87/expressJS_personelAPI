@@ -52,11 +52,32 @@ ACCESS_KEY=<your_jwt_access_secret>
 REFRESH_KEY=<your_jwt_refresh_secret>
 ```
 
-## Quick Start
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Set up `.env` file
-4. Start server: `npm start`
+
+## API Documentation
+
+- Swagger UI: [http://localhost:8000/api-docs](http://localhost:8000/api-docs)
+- Redoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+- OpenAPI JSON: [http://localhost:8000/docs/json](http://localhost:8000/docs/json)
+
+### Root Endpoint
+
+`GET /`
+
+Örnek çıktı:
+
+```json
+{
+  "error": false,
+  "message": "Welcome to Personel API",
+  "isLogin": false,
+  "user": null,
+  "documentation": {
+    "swagger_ui": "http://localhost:8000/api-docs",
+    "redoc": "http://localhost:8000/redoc",
+    "openapi_json": "http://localhost:8000/docs/json"
+  }
+}
+```
 
 ## Project Structure
 ```
