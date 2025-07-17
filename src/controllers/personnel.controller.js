@@ -4,7 +4,13 @@ const Personnel = require("../models/personnel.model");
 
 //! *****************************************
 module.exports = {
+  
   list: async (req, res) => {
+    /*
+    #swagger.tags = ['Personnel']
+    #swagger.summary = 'List Personnel'
+    #swagger.description = 'Get all personnel.'
+  */
     const data = await req.getModelList(Personnel,{}, 'departmentId');
     const details = await req.getModelListDetails(Personnel);
     res.status(200).json({
@@ -14,7 +20,13 @@ module.exports = {
       details,
     });
   },
+  
   create: async (req, res) => {
+    /*
+    #swagger.tags = ['Personnel']
+    #swagger.summary = 'Create Personnel'
+    #swagger.description = 'Create a new personnel.'
+  */
     const isLead = req.body?.isLead || false;
     if (isLead) {
       await Personnel.updateMany(
@@ -29,7 +41,13 @@ module.exports = {
       result: data,
     });
   },
+  
   read: async (req, res) => {
+    /*
+    #swagger.tags = ['Personnel']
+    #swagger.summary = 'Get Personnel'
+    #swagger.description = 'Get a personnel by ID.'
+  */
     const data = await Personnel.findById(req.params.personnelId);
     if (!data) {
       return res
@@ -41,7 +59,13 @@ module.exports = {
       result: data,
     });
   },
+
   update: async (req, res) => {
+      /*
+    #swagger.tags = ['Personnel']
+    #swagger.summary = 'Update Personnel'
+    #swagger.description = 'Update a personnel by ID.'
+  */
     // isLead Control:
     const isLead = req.body?.isLead || false;
     let updatedPersonnel;
@@ -75,7 +99,13 @@ module.exports = {
       result: updatedPersonnel,
     });
   },
+ 
   delete: async (req, res) => {
+     /*
+    #swagger.tags = ['Personnel']
+    #swagger.summary = 'Delete Personnel'
+    #swagger.description = 'Delete a personnel by ID.'
+  */
     const data = await Personnel.findByIdAndDelete(req.params.personnelId);
     if (!data) {
       return res
